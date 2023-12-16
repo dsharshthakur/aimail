@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
@@ -7,7 +8,7 @@ st.markdown("<p style = ' text-align:center;font-size:15px ; margin-top:-25px;'>
 st.markdown("<br>" , unsafe_allow_html = True)
 
 
-# res = model.invoke("What is ai  ?")
+
 st.markdown('''
 <h4 style = 'text-decoration:underline;'>Welcome to the <span style = 'color:orange'>AI</span>mail</h4>
 
@@ -30,8 +31,8 @@ Start creating beautiful, expressive letters today! Simply input your details, a
 ''' , unsafe_allow_html = True)
 
 def generatemail(occupation, mail_subject, total_words):
-    key = ""
-    model = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=key)
+    key = os.getenv["PROJECT_KEY"]
+    model = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key= key)
 
     system_template = "write an email for a {mtype} on the topic {topic} in {words} words."
 
