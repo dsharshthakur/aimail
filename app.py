@@ -32,6 +32,9 @@ Easy-to-use interface for a seamless experience.
 Personalize each letter according to your preferences.
 Start creating beautiful, expressive letters today! Simply input your details, and let our model do the rest.
 
+Harsh Thakur
+(Creator) 
+
 ''' , unsafe_allow_html = True)
 
 def generatemail(occupation, mail_subject, total_words):
@@ -79,7 +82,7 @@ col1,col2,col3 = st.columns([0.40, 0.20 , 0.30])
 with col2:
     st.markdown("<br>", unsafe_allow_html = True)
     generate_btn = st.button("Generate", use_container_width = True)
-   st.markdown("<br>", unsafe_allow_html = True)
+    st.markdown("<br>", unsafe_allow_html = True)
 
 if generate_btn == True:
     if occupation != " " and selected_subject != " " :
