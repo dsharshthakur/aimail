@@ -41,7 +41,7 @@ Start creating beautiful, expressive letters today! Simply input your details, a
 st.markdown("<br>", unsafe_allow_html = True)
 st.markdown("<br>", unsafe_allow_html = True)
 
-st.markdown("<h5 style ='text-align:center'>Start Generating</h5>", unsafe_allow_html = True)
+st.markdown("<h4 style ='text-align:center'>Start Generating</h4>", unsafe_allow_html = True)
 st.markdown("<br>", unsafe_allow_html = True)
 st.markdown("<br>", unsafe_allow_html = True)
 
