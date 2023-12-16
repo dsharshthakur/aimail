@@ -102,7 +102,7 @@ if generate_btn == True:
 
           
             st.write(ai_response)
-            st.markdown("# My Streamlit App", theme="darkly")
+            st.markdown("# My Streamlit App", )
     else:
         st.warning("Please fill all the information first.")
 
