@@ -100,8 +100,9 @@ if generate_btn == True:
             st.markdown("<h5>Response:</h5>", unsafe_allow_html=True)
           
             st.info(ai_response)
+        st.write("You can generate the response again if not satisfied.")
+
             
     else:
         st.warning("Please fill all the information first.")
-st.write("You can generate the response again if not satisfied.")
             
