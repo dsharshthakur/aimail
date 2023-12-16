@@ -40,9 +40,10 @@ Start creating beautiful, expressive letters today! Simply input your details, a
 
 st.markdown("<br>", unsafe_allow_html = True)
 st.markdown("<br>", unsafe_allow_html = True)
-st.markdown("<br>", unsafe_allow_html = True)
-st.markdown("<br>", unsafe_allow_html = True)
 
+st.markdown("<h5 style = "text-align:center">Start Generating</h5>", unsafe_allow_html = True)
+st.markdown("<br>", unsafe_allow_html = True)
+st.markdown("<br>", unsafe_allow_html = True)
 
 def generatemail(occupation, mail_subject, total_words):
     key = st.secrets["PROJECT_KEY"]
