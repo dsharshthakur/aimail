@@ -3,15 +3,10 @@ import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-st.write("This text has a dark background!")
-st.markdown("""
-<style>
-  .st-c[data-key="dark_container"] {
-      background-color: #333;
-      color: white;
-  }
-  </style>
- """, unsafe_allow_html=True)
+
+1.5.
+
+
 
 st.markdown("<h1 style = 'text-align:center; font-size:58px;'><span style = 'color:orange'>AI</span>mailU+1f916</h1>" , unsafe_allow_html = True)
 st.markdown("<p style = ' text-align:center;font-size:15px ; margin-top:-25px;'> It's <b>AImail</b> not <b>Email !!</b> </p>" , unsafe_allow_html = True)
@@ -90,8 +85,22 @@ if generate_btn == True:
     if occupation != " " and selected_subject != " " :
         ai_response = generatemail(occupation=occupation , mail_subject = selected_subject, total_words = total_words)
 
-        with st.container(border = True , key = "dark-container") as response_container:
+        with st.container(border = True ) as response_container:
+            
             st.markdown("<h5>Response:</h5>", unsafe_allow_html=True)
+            container.markdown(
+    """
+    <style>
+        .st-dl {
+            background-color: #f0f0f0; /* Set your desired background color here */
+            padding: 10px; /* Optional: Add padding for better appearance */
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+          
             st.write(ai_response)
             st.markdown("# My Streamlit App", theme="darkly")
     else:
