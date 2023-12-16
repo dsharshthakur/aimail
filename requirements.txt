@@ -1,4 +1,3 @@
 streamlit
-import os
 langchain
 langchain-google-genai 
