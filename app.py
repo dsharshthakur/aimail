@@ -31,7 +31,7 @@ Start creating beautiful, expressive letters today! Simply input your details, a
 ''' , unsafe_allow_html = True)
 
 def generatemail(occupation, mail_subject, total_words):
-    key = os.getenv["PROJECT_KEY"]
+    key = os.getenv("PROJECT_KEY")
     model = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key= key)
 
     system_template = "write an email for a {mtype} on the topic {topic} in {words} words."
