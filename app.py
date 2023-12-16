@@ -5,7 +5,16 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
 
-
+st.markdown(
+    """
+    <style>
+        .css-1l02zgi {
+            background-color: #f0f0f0 !important; /* Set your desired background color here */
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 
 st.markdown("<h1 style = 'text-align:center; font-size:58px;'><span style = 'color:orange'>AI</span>mailU+1f916</h1>" , unsafe_allow_html = True)
@@ -88,18 +97,6 @@ if generate_btn == True:
         with st.container(border = True ) as response_container:
             
             st.markdown("<h5>Response:</h5>", unsafe_allow_html=True)
-            response_container.markdown(
-    """
-    <style>
-        .st-dl {
-            background-color: #f0f0f0; /* Set your desired background color here */
-            padding: 10px; /* Optional: Add padding for better appearance */
-        }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
           
             st.write(ai_response)
             st.markdown("# My Streamlit App", )
