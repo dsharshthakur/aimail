@@ -32,15 +32,17 @@ Easy-to-use interface for a seamless experience.
 Personalize each letter according to your preferences.
 Start creating beautiful, expressive letters today! Simply input your details, and let our model do the rest.
 <b>Harsh Thakur</b>
-    (Creator) 
-st.markdown("<br>", unsafe_allow_html = True)
-st.markdown("<br>", unsafe_allow_html = True)
-st.markdown("<br>", unsafe_allow_html = True)
-st.markdown("<br>", unsafe_allow_html = True)
-
-
+    (Creator)
 
 ''' , unsafe_allow_html = True)
+
+
+
+st.markdown("<br>", unsafe_allow_html = True)
+st.markdown("<br>", unsafe_allow_html = True)
+st.markdown("<br>", unsafe_allow_html = True)
+st.markdown("<br>", unsafe_allow_html = True)
+
 
 def generatemail(occupation, mail_subject, total_words):
     key = st.secrets["PROJECT_KEY"]
@@ -59,7 +61,7 @@ col1, col2, col3 = st.columns([0.4,0.4,0.2])
 with col1:
     occupation = st.selectbox("Who you are :", options = [" ","Student" , "Professional" , "Other"])
     if occupation == "Student":
-        mail_subject = [" ","Take Leave","Special Accommodations Request","Event","Facility/Service Issue","Exam Issue" , "Custom"]
+        mail_subject = [" ","Leave Request Email","Special Accommodations Request","Event","Facility/Service Issue","Exam Issue" , "Custom"]
     elif occupation == "Professional":
         mail_subject = [" ","Leave Request Email" , "Job Application Email", "Resignation Email" , "Meeting Request Email" ,"Thank You Email" , "Client Proposal Email" , "Feedback Request Email", "Custom" ]
     else:
@@ -98,8 +100,8 @@ if generate_btn == True:
             st.markdown("<h5>Response:</h5>", unsafe_allow_html=True)
           
             st.info(ai_response)
-            st.write("You can generate the response again iff not satisfied.")
             
     else:
         st.warning("Please fill all the information first.")
-
+st.write("You can generate the response again if not satisfied.")
+            
