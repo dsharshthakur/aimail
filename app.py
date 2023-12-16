@@ -60,7 +60,7 @@ def generatemail(occupation, mail_subject, total_words):
 col1, col2, col3 = st.columns([0.4,0.4,0.2])
 
 with col1:
-    occupation = st.selectbox("Who you are :", options = [" ","Student" , "Professional" , "Other"])
+    occupation = st.selectbox("Select Occupation:", options = [" ","Student" , "Professional" , "Other"])
     if occupation == "Student":
         mail_subject = [" ","Leave Request Email","Special Accommodations Request","Event","Facility/Service Issue","Exam Issue" , "Custom"]
     elif occupation == "Professional":
