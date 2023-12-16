@@ -88,7 +88,7 @@ if generate_btn == True:
         with st.container(border = True ) as response_container:
             
             st.markdown("<h5>Response:</h5>", unsafe_allow_html=True)
-            st.markdown(
+            response_container.markdown(
     """
     <style>
         .st-dl {
