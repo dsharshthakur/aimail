@@ -79,6 +79,7 @@ col1,col2,col3 = st.columns([0.40, 0.20 , 0.30])
 with col2:
     st.markdown("<br>", unsafe_allow_html = True)
     generate_btn = st.button("Generate", use_container_width = True)
+   st.markdown("<br>", unsafe_allow_html = True)
 
 if generate_btn == True:
     if occupation != " " and selected_subject != " " :
@@ -89,6 +90,7 @@ if generate_btn == True:
             st.markdown("<h5>Response:</h5>", unsafe_allow_html=True)
           
             st.info(ai_response)
+            st.write("You can generate the response again iff not satisfied.")
             
     else:
         st.warning("Please fill all the information first.")
