@@ -98,8 +98,8 @@ if generate_btn == True:
             
             st.markdown("<h5>Response:</h5>", unsafe_allow_html=True)
           
-            st.write(ai_response)
-            st.markdown("# My Streamlit App", )
+            st.info(ai_response)
+            
     else:
         st.warning("Please fill all the information first.")
 
