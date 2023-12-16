@@ -80,7 +80,7 @@ if generate_btn == True:
     if occupation != " " and selected_subject != " " :
         ai_response = generatemail(occupation=occupation , mail_subject = selected_subject, total_words = total_words)
 
-        with st.container() as response_container:
+        with st.container(border = True) as response_container:
             st.markdown("<h5>Response:</h5>", unsafe_allow_html=True)
             st.write(ai_response)
     else:
