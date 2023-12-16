@@ -32,7 +32,7 @@ Start creating beautiful, expressive letters today! Simply input your details, a
 
 def generatemail(occupation, mail_subject, total_words):
     key = os.getenv("PROJECT_KEY")
-    model = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key= key)
+    model = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=str(key))
 
     system_template = "write an email for a {mtype} on the topic {topic} in {words} words."
 
