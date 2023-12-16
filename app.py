@@ -9,7 +9,7 @@ st.markdown(
     """
     <style>
         .css-1l02zgi {
-            background-color: #f0f0f0 !important; /* Set your desired background color here */
+            background-color: red !important; /* Set your desired background color here */
         }
     </style>
     """,
