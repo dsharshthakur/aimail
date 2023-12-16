@@ -31,9 +31,14 @@ State-of-the-art language model for natural and coherent text generation.
 Easy-to-use interface for a seamless experience.
 Personalize each letter according to your preferences.
 Start creating beautiful, expressive letters today! Simply input your details, and let our model do the rest.
+<b>Harsh Thakur</b>
+    (Creator) 
+st.markdown("<br>", unsafe_allow_html = True)
+st.markdown("<br>", unsafe_allow_html = True)
+st.markdown("<br>", unsafe_allow_html = True)
+st.markdown("<br>", unsafe_allow_html = True)
 
-Harsh Thakur
-(Creator) 
+
 
 ''' , unsafe_allow_html = True)
 
