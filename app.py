@@ -82,7 +82,7 @@ if occupation != "Other" :
     with col2:
         selected_subject = st.selectbox(label = "Choose mail type." , options = mail_subject)
     with col3:
-        total_words = st.number_input(label="Total Words", value=100 ,  min_value = 50)
+        total_words = st.number_input(label="Total Words", value=100 ,  min_value = 50 , max_value = 1000)
     if selected_subject == 'Custom':
         col1,col2,col3 = st.columns([0.40,0.40,0.20])
         with col2:
@@ -92,7 +92,7 @@ else :
     with col2:
         selected_subject = st.text_input(label = "Write the subject here." , value = " ")
     with col3:
-        total_words = st.number_input(label="Total Words", value=100)
+        total_words = st.number_input(label="Total Words", value=100 ,min_value = 50, max_value = 1000)
 
 
 #generate button layout
