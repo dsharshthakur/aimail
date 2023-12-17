@@ -6,13 +6,13 @@ from langchain.chains import LLMChain
 
 
 
-
+#heading
 st.markdown("<h1 style = 'text-align:center; font-size:58px;'><span style = 'color:orange'>AI</span>mail</h1>" , unsafe_allow_html = True)
 st.markdown("<p style = ' text-align:center;font-size:15px ; margin-top:-25px;'> It's <b>AImail</b> not <b>Email !!</b> </p>" , unsafe_allow_html = True)
 st.markdown("<br>" , unsafe_allow_html = True)
 
 
-
+#welcome message
 st.markdown('''
 <h4 style = 'text-decoration:underline;'>Welcome to the <span style = 'color:orange'>AI</span>mail</h4>
 
@@ -45,18 +45,28 @@ st.markdown("<h4 style ='text-align:center'>Start Generating</h4>", unsafe_allow
 st.markdown("<br>", unsafe_allow_html = True)
 st.markdown("<br>", unsafe_allow_html = True)
 
+#mail generation
 def generatemail(occupation, mail_subject, total_words):
     key = st.secrets["PROJECT_KEY"]
 
     model = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=str(key))
+    if occupation != "Other":
+     system_template = "write an email for a {mtype} on the topic {topic} in {words} words."
 
-    system_template = "write an email for a {mtype} on the topic {topic} in {words} words."
+     prompt = PromptTemplate(input_variables=["mtype", "topic", "total_words"], template=system_template)
+     chain = LLMChain(llm=model, prompt=prompt)
+     ai_response = chain.run(mtype=occupation, topic=mail_subject, words=total_words)
+    else: 
+     system_template = "write an email on the topic {topic} in {words} words."
 
-    prompt = PromptTemplate(input_variables=["mtype", "topic", "total_words"], template=system_template)
-    chain = LLMChain(llm=model, prompt=prompt)
-    ai_response = chain.run(mtype=occupation, topic=mail_subject, words=total_words)
-    return ai_response
+     prompt = PromptTemplate(input_variables=[ "topic", "total_words"], template=system_template)
+     chain = LLMChain(llm=model, prompt=prompt)
+     ai_response = chain.run(topic=mail_subject, words=total_words)
+   
+     
+ return ai_response
 
+#layout
 col1, col2, col3 = st.columns([0.4,0.4,0.2])
 
 with col1:
@@ -85,25 +95,27 @@ else :
         total_words = st.number_input(label="Total Words", value=100)
 
 
-
+#generate button layout
 col1,col2,col3 = st.columns([0.40, 0.20 , 0.30])
 with col2:
     st.markdown("<br>", unsafe_allow_html = True)
+    
+    #button
     generate_btn = st.button("Generate", use_container_width = True)
     st.markdown("<br>", unsafe_allow_html = True)
 
+#if button is active
 if generate_btn == True:
     if occupation != " " and selected_subject != " " :
         ai_response = generatemail(occupation=occupation , mail_subject = selected_subject, total_words = total_words)
 
+        #response container
         with st.container(border = True ) as response_container:
-            
             st.markdown("<h5>Response:</h5>", unsafe_allow_html=True)
-          
             st.info(ai_response)
         st.write("You can generate the response again if not satisfied.")
 
-            
+    #Display a warning message if user press the generte button without filling details            
     else:
         st.warning("Please fill all the information first.")
             
