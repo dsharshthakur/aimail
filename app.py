@@ -62,9 +62,8 @@ def generatemail(occupation, mail_subject, total_words):
      prompt = PromptTemplate(input_variables=[ "topic", "total_words"], template=system_template)
      chain = LLMChain(llm=model, prompt=prompt)
      ai_response = chain.run(topic=mail_subject, words=total_words)
-   
-     
- return ai_response
+    
+    return ai_response
 
 #layout
 col1, col2, col3 = st.columns([0.4,0.4,0.2])
